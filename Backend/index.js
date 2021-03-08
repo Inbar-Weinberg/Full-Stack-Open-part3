@@ -31,8 +31,9 @@ const morgan = require("morgan");
 app.use(express.json());
 app.use(morgan(`tiny`));
 
-app.get('/',(r,e)=>{
+app.get('/',(r,e,n)=>{
   e.send('hello')
+  n();
 })
 app.use('/',express.static(`${process.cwd()}/Backend/build`));
 
