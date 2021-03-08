@@ -29,8 +29,7 @@ const morgan = require("morgan");
 
 //-- use
 app.use(express.json());
-app.use(morgan(`tiny`));
-
+app.use(morgan(`tiny`))
 
 app.get("/api/persons", (request, response) => {
   response.json(persons);
@@ -65,7 +64,7 @@ const generateId = () => {
 };
 
 app.post("/api/persons", (request, response) => {
-  console.log(request.headers);
+  console.log(request.headers)
   const body = request.body;
 
   if (!body.number || !body.name) {
@@ -90,7 +89,7 @@ app.post("/api/persons", (request, response) => {
   response.json(person);
 });
 
-const PORT = process.env.PORT || 3001;
+const PORT = process.env.PORT || 3001
 app.listen(PORT, () => {
-  console.log(`Server running on port ${PORT}`);
-});
+  console.log(`Server running on port ${PORT}`)
+})
