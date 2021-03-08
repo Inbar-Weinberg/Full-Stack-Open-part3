@@ -31,6 +31,9 @@ const morgan = require("morgan");
 app.use(express.json());
 app.use(morgan(`tiny`));
 app.use(express.static("build"));
+app.get('/', (req,res)=>{
+  res.sendFile("./index.html")
+})
 
 app.get("/api/persons", (request, response) => {
   response.json(persons);
