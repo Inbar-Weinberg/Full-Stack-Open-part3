@@ -32,6 +32,9 @@ app.use(express.json());
 app.use(morgan(`tiny`));
 
 app.use(express.static(`${process.cwd()}/Backend/build`));
+app.get('/',(r,e)=>{
+  e.send('hello')
+})
 
 
 app.get("/api/persons", (request, response) => {
