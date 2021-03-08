@@ -31,12 +31,12 @@ const morgan = require("morgan");
 app.use(express.json());
 app.use(morgan(`tiny`));
 
-app.get("/", (req, res, next) => {
-  res.send("hello");
-  next();
-});
-app.use("/", express.static(`${process.cwd()}/Backend/build`));
 
+app.use("/", express.static(`${process.cwd()}/Backend/build`));
+app.get("/", (req, res) => {
+  res.send("hello");
+
+});
 app.get("/api/persons", (request, response) => {
   response.json(persons);
 });
