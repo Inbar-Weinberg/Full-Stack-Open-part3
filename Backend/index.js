@@ -31,8 +31,7 @@ const morgan = require("morgan");
 app.use(express.json());
 app.use(morgan(`tiny`));
 
-
-app.use(express.static(`${process.cwd()}/Backend/build`));
+app.use("/info", express.static(`${process.cwd()}/Backend/build`));
 
 app.get("/api/persons", (request, response) => {
   response.json(persons);
