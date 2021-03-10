@@ -40,7 +40,7 @@ app.get("/api/persons/:id", (request, response) => {
     .catch((error) => response.status(404).end());
 });
 
-app.get("/api/persons", (request, response) => {
+app.get(`${process.cwd()}/api/persons`, (request, response) => {
   Person.find({}).then((persons) => {
     response.json(persons);
   });
