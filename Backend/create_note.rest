@@ -1,8 +1,15 @@
-POST http://localhost:3005/api/persons HTTP/1.1
-console.log(request.headers)
+### 
+GET http://localhost:3001/api/persons
+### imporatant must have a single space line between POST and body object
+GET http://localhost:3001/api/persons/604904493b29f33b046a9f7b
+
+###
+
+POST http://localhost:3001/api/persons HTTP/1.1
+content-type: application/json
 
 {
-    "name": "sample",
-    "time": "Wed, 21 Oct 2015 18:27:50 GMT"
+    "name": "sample name",
+    "number": "11133358"
 }
-### imporatant must have a single space line between POST and body object
+
